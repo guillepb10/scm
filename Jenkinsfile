@@ -3,7 +3,9 @@ pipeline {
 
     stages {
         stage('Checkout'){
-            sh 'git clone https://github.com/guillepb10/confi-server.git'
+            steps{
+                sh 'git clone https://github.com/guillepb10/confi-server.git'
+            }
         }
 
         stage('Build') {
