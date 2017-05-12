@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Checkout'){
             steps{
+                deleteDir()
                 sh 'git clone https://github.com/guillepb10/confi-server.git'
             }
         }
