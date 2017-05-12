@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'mvn clean install -pl confi-server'
+                sh 'mvn clean install -f confi-server/pom.xml'
             }
         }
         stage('Package') {
