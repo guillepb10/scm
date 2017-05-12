@@ -5,6 +5,7 @@ pipeline {
         stage('Checkout'){
             steps{
                 sh 'git clone https://github.com/guillepb10/confi-server.git'
+                cd config-server
             }
         }
 
