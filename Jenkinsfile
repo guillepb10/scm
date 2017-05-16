@@ -18,7 +18,7 @@ pipeline {
         stage('Package') {
             steps {
                 echo 'Packaging..'
-                sh 'mvn docker:build'
+                sh 'mvn package docker:build -pl docker'
             }
         }
         stage('Deploy') {
