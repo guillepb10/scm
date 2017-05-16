@@ -18,7 +18,7 @@ pipeline {
         stage('Package') {
             steps {
                 echo 'Packaging..'
-                sh 'mvn package docker:build -pl rol-stories-config-server-docker'
+                sh 'mvn package docker:build -f confi-server/pom.xml -pl rol-stories-config-server-docker'
             }
         }
         stage('Deploy') {
