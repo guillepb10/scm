@@ -6,19 +6,20 @@ pipeline {
             steps{
                 deleteDir()
                 sh 'git clone https://github.com/guillepb10/confi-server.git'
+                sh 'cd confi-server'
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'mvn clean install -f confi-server/pom.xml'
+                sh 'mvn clean install'
             }
         }
         stage('Package') {
             steps {
                 echo 'Packaging..'
-                sh 'mvn package docker:build -f confi-server/pom.xml -pl rol-stories-config-server-docker'
+                sh 'mvn package docker:build -pl docker'
             }
         }
         stage('Deploy') {
