@@ -27,7 +27,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Testing..'
+                dir('confi-server'){
+                    sh 'mvn package docker:push -pl docker'
+                }
             }
         }
     }
