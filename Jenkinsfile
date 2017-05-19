@@ -21,8 +21,7 @@ pipeline {
             steps {
                 dir('confi-server'){
                     echo 'Packaging..'
-                    sh $(aws ecr get-login us-west-2)
-                    sh 'mvn package docker:build -pl docker'
+                    sh '$(aws ecr get-login us-west-2) && mvn package docker:build -pl docker'
                 }
             }
         }
